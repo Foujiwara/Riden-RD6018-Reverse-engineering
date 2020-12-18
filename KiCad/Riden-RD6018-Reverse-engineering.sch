@@ -4,11 +4,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
+Title "Power circuit Riden RD6018 "
+Date "2020-12-18"
 Rev ""
-Comp ""
-Comment1 ""
+Comp "Foujiwara"
+Comment1 "circuit de puissance "
 Comment2 ""
 Comment3 ""
 Comment4 ""
