@@ -27,12 +27,12 @@ $EndComp
 $Comp
 L Device:Q_NMOS_GDS Q3
 U 1 1 5FDC3FB5
-P 6150 1750
-F 0 "Q3" H 6400 1750 50  0000 L CNN
-F 1 "Q_NMOS_GDS" H 6100 2100 50  0001 L CNN
-F 2 "" H 6350 1850 50  0001 C CNN
-F 3 "~" H 6150 1750 50  0001 C CNN
-	1    6150 1750
+P 5900 1750
+F 0 "Q3" H 6150 1750 50  0000 L CNN
+F 1 "Q_NMOS_GDS" H 5850 2100 50  0001 L CNN
+F 2 "" H 6100 1850 50  0001 C CNN
+F 3 "~" H 5900 1750 50  0001 C CNN
+	1    5900 1750
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -141,8 +141,6 @@ Wire Wire Line
 Wire Wire Line
 	7800 1550 7600 1550
 Connection ~ 7800 1550
-Wire Wire Line
-	7600 1550 7000 1550
 Connection ~ 7600 1550
 Wire Wire Line
 	7800 1850 7600 1850
@@ -159,7 +157,7 @@ Wire Wire Line
 	7800 1850 7950 1850
 Connection ~ 7800 1850
 Wire Wire Line
-	6600 1550 6050 1550
+	6600 1550 6450 1550
 Connection ~ 5000 1900
 Wire Wire Line
 	5000 1900 5000 2250
@@ -345,17 +343,9 @@ Wire Wire Line
 Wire Wire Line
 	5300 2800 5300 2550
 Connection ~ 5300 2550
-Connection ~ 6050 1550
-Wire Wire Line
-	6050 1550 5500 1550
-Wire Wire Line
-	6050 1950 7300 1950
 Connection ~ 7300 1950
 Wire Wire Line
 	7300 1950 7300 3100
-Wire Wire Line
-	6050 1950 5300 1950
-Connection ~ 6050 1950
 Connection ~ 5300 1950
 Wire Wire Line
 	5300 1950 5300 1900
@@ -384,9 +374,176 @@ Wire Wire Line
 Wire Wire Line
 	4650 4600 5650 4600
 Text GLabel 6800 1250 2    50   Input ~ 0
-Q0
-Text GLabel 6350 1750 2    50   Input ~ 0
-Q3
+Q0_G
+Text GLabel 6100 1750 2    50   Input ~ 0
+Q3_G
 Text GLabel 8150 2150 2    50   Input ~ 0
 Q_In
+$Comp
+L Device:D_Schottky D3
+U 1 1 5FDC834F
+P 1250 1350
+F 0 "D3" H 1250 1450 50  0000 C CNN
+F 1 "D_Schottky" H 1300 1150 50  0001 C CNN
+F 2 "" H 1250 1350 50  0001 C CNN
+F 3 "~" H 1250 1350 50  0001 C CNN
+	1    1250 1350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R60
+U 1 1 5FDC9AC7
+P 1250 1500
+F 0 "R60" V 1150 1500 50  0000 C CNN
+F 1 "R" H 1320 1455 50  0001 L CNN
+F 2 "" V 1180 1500 50  0001 C CNN
+F 3 "~" H 1250 1500 50  0001 C CNN
+	1    1250 1500
+	0    1    -1   0   
+$EndComp
+Text GLabel 1000 1500 0    50   Input ~ 0
+Q0_G
+Wire Wire Line
+	1000 1500 1100 1500
+Text GLabel 6450 1250 2    50   Input ~ 0
+Q0_S
+Wire Wire Line
+	7000 1550 7600 1550
+Wire Wire Line
+	6450 1250 6450 1550
+Connection ~ 6450 1550
+Connection ~ 5800 1550
+Wire Wire Line
+	5800 1550 5500 1550
+Connection ~ 5800 1950
+Wire Wire Line
+	5800 1950 5300 1950
+Wire Wire Line
+	5800 1550 6450 1550
+Wire Wire Line
+	5800 1950 7300 1950
+$Comp
+L power:GND #PWR?
+U 1 1 5FDDAECA
+P 2500 1800
+F 0 "#PWR?" H 2500 1550 50  0001 C CNN
+F 1 "GND" H 2505 1627 50  0000 C CNN
+F 2 "" H 2500 1800 50  0001 C CNN
+F 3 "" H 2500 1800 50  0001 C CNN
+	1    2500 1800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 1350 1100 1500
+Connection ~ 1100 1500
+Text GLabel 1000 1700 0    50   Input ~ 0
+Q0_S
+$Comp
+L Device:C_Small C?
+U 1 1 5FDEC5AB
+P 2500 950
+F 0 "C?" H 2300 950 50  0000 L CNN
+F 1 "C_Small" H 2592 905 50  0001 L CNN
+F 2 "" H 2500 950 50  0001 C CNN
+F 3 "~" H 2500 950 50  0001 C CNN
+	1    2500 950 
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5FDEE2EF
+P 2550 750
+F 0 "#PWR?" H 2550 600 50  0001 C CNN
+F 1 "+12V" V 2565 878 50  0000 L CNN
+F 2 "" H 2550 750 50  0001 C CNN
+F 3 "" H 2550 750 50  0001 C CNN
+	1    2550 750 
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	1550 1700 1000 1700
+Wire Wire Line
+	2500 1800 2500 1200
+Wire Wire Line
+	2550 750  2500 750 
+$Comp
+L lm5106:LM5106 U?
+U 1 1 5FE0B631
+P 2000 850
+F 0 "U?" H 2000 897 50  0000 C CNN
+F 1 "LM5106" H 2000 806 50  0000 C CNN
+F 2 "" H 2000 850 50  0001 C CNN
+F 3 "" H 2000 850 50  0001 C CNN
+	1    2000 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 750  2500 850 
+Wire Wire Line
+	1700 1500 1550 1500
+Wire Wire Line
+	1550 1500 1550 1700
+Wire Wire Line
+	1400 1350 1400 1500
+Connection ~ 1400 1350
+Wire Wire Line
+	1400 1350 1700 1350
+Wire Wire Line
+	1550 1500 1550 1450
+Connection ~ 1550 1500
+Wire Wire Line
+	1550 1250 1550 1200
+Wire Wire Line
+	2300 1200 2500 1200
+Connection ~ 2500 1200
+Wire Wire Line
+	2500 1200 2500 1050
+Wire Wire Line
+	2300 1350 2650 1350
+Wire Wire Line
+	1700 1050 1700 750 
+NoConn ~ 2300 1050
+$Comp
+L Device:C_Small C44
+U 1 1 5FDCA85B
+P 1550 1350
+F 0 "C44" H 1600 1450 50  0000 L CNN
+F 1 "C_Small" H 1642 1305 50  0001 L CNN
+F 2 "" H 1550 1350 50  0001 C CNN
+F 3 "~" H 1550 1350 50  0001 C CNN
+	1    1550 1350
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1200 1550 1200
+Connection ~ 1550 1200
+Wire Wire Line
+	1550 1200 1550 1100
+$Comp
+L Device:D_Schottky D?
+U 1 1 5FDEC014
+P 1550 950
+F 0 "D?" H 1550 1050 50  0000 C CNN
+F 1 "D_Schottky" H 1600 750 50  0001 C CNN
+F 2 "" H 1550 950 50  0001 C CNN
+F 3 "~" H 1550 950 50  0001 C CNN
+	1    1550 950 
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	1700 750  1550 750 
+Wire Wire Line
+	1550 750  1550 800 
+Wire Wire Line
+	1700 750  2500 750 
+Connection ~ 1700 750 
+Connection ~ 2500 750 
+Text Notes 1400 2050 0    79   ~ 0
+Pilotage Q0
+Text GLabel 2650 1350 2    59   Input ~ 0
+?
+Wire Notes Line
+	3150 650  3150 2150
+Wire Notes Line
+	3150 2150 700  2150
 $EndSCHEMATC
